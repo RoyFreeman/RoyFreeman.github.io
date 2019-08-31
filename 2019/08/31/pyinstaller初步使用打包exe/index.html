@@ -19,10 +19,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-<meta name="keywords" content>
+<meta name="keywords" content="python,module">
 
 
-<meta name="description" content>
+<meta name="description" content="安装
+环境我使用的是anaconda管理的虚拟环境，python自带的虚拟环境应该是同理的；在conda下安装当然就用conda install pkg-name就行了；打包操作我是要想打包成一...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +34,7 @@
 
 <title>
     
-    归档：2019 |
+    pyinstaller初步使用打包exe |
     
     风中追风
 </title>
@@ -136,193 +137,109 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-    <div class="timebox">
-        <div class="timeline">
-            <ul>
-                
-                
-                
-                
-                
-                
-                <h2>
-                    2019
-                </h2>
-                
-                
-                <li>
-                    
-                    <h3>
-                        31<span>
-                            08月</span>
-                    </h3>
-                    <a href="/2019/08/31/这位选手尚未调整好心态(工具)/" title="这位选手尚未调整好心态" target="_blank">
-                        这位选手尚未调整好心态</a>
-                </li>
-                
-                
-                
-                
-                
-                
-                <li>
-                    
-                    <h3>
-                        31<span>
-                            08月</span>
-                    </h3>
-                    <a href="/2019/08/31/这位选手尚未调整好心态/" title="这位选手尚未调整好心态" target="_blank">
-                        这位选手尚未调整好心态</a>
-                </li>
-                
-                
-                
-                
-                
-                
-                <li>
-                    
-                    <h3>
-                        31<span>
-                            08月</span>
-                    </h3>
-                    <a href="/2019/08/31/pyinstaller初步使用打包exe/" title="pyinstaller初步使用打包exe" target="_blank">
-                        pyinstaller初步使用打包exe</a>
-                </li>
-                
-                
-            </ul>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="pyinstaller初步使用打包exe">
+            
+            pyinstaller初步使用打包exe
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/python/">python</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/module/">module</a> <a class="tag-link" href="/tags/python/">python</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/08/31</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>环境<br>我使用的是anaconda管理的虚拟环境，python自带的虚拟环境应该是同理的；<br>在conda下安装当然就用conda install pkg-name就行了；<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4>我是要想打包成一个exe文件，那么使用的是：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F E:\dir_path\py2exe_file_name.py -p E:\dir_path</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>注意的是需要先进入虚拟环境里，并且将CMD定位到pyinstaller在的文件夹，pyinstaller刚好也是在anaconda虚拟环境文件夹里；<br>一般在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\anaconda\envs\env_name\Scripts</span><br></pre></td></tr></table></figure>
+
+<p>（可以在这个文件先看下有没有pyinstaller.exe这个文件，没有的话说明你这个虚拟环境还没安装pyinstaller）</p>
+<h4 id="文件在哪里？"><a href="#文件在哪里？" class="headerlink" title="文件在哪里？"></a>文件在哪里？</h4><p>在虚拟环境Scripts文件夹会多出两个文件夹build和dist，你需要的exe文件在dist里面</p>
+<h3 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h3><h4 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h4><ul>
+<li><p>开始输入命令可能会报一个文件缺失的错误，全盘搜索到这个文件，然后完全按照报错提示的路径复制一份进去（没有这个路径就照着新建文件夹）</p>
+<h4 id="文件过大"><a href="#文件过大" class="headerlink" title="文件过大"></a>文件过大</h4></li>
+<li><p>打包出来的文件过大，请查看下你的虚拟环境里是不是有太多无关的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果有的话可以另起一个临时只包含必须的包的虚拟环境来打包，搞定后再删除这个环境即可</p>
+</li>
+<li><p>都是必须的包，那就考虑换更精致的包吧XD</p>
+<h4 id="后悔重来"><a href="#后悔重来" class="headerlink" title="后悔重来"></a>后悔重来</h4></li>
+<li><p>重来的话请先把build里面的对应文件夹和dist里面的exe删除，然后再来一次就行了</p>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处
+            
+            
+        </div>
+        <div>
+            
         </div>
     </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2019/08/31/这位选手尚未调整好心态/" class="pre-post btn btn-default" title='这位选手尚未调整好心态'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            这位选手尚未调整好心态</span>
+    </a>
+    
+    
 </div>
+
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        网站公告
-    </h3>
-    <div class="notification">
-        <p>
-    先就这样吧，懒得调了，还行
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="mailto:464985498@qq.com" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包"><span class="toc-text">打包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件在哪里？"><span class="toc-text">文件在哪里？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可能遇到的问题"><span class="toc-text">可能遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#报错"><span class="toc-text">报错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件过大"><span class="toc-text">文件过大</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后悔重来"><span class="toc-text">后悔重来</span></a></li></ol></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/python/"><i class="fa" aria-hidden="true">python</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/"><i class="fa" aria-hidden="true">工具</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/"><i class="fa" aria-hidden="true">机器学习</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/"><i class="fa" aria-hidden="true">2019年08月</i></a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <canvas width="300" height="300" id="tag-cloud-3d">
-            <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/标签1/" style="font-size: 20px;">标签1</a> <a href="/tags/标签2/" style="font-size: 20px;">标签2</a>
-        </canvas>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -358,8 +275,6 @@
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
